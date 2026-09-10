@@ -1,0 +1,9 @@
+<svg width="280" height="60" viewBox="0 0 280 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="WS-Services">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;display=swap');
+      .wm { font-family: 'Poppins', Arial, sans-serif; font-weight: 600; font-size: 42px; }
+    </style>
+  </defs>
+  <text x="0" y="44" class="wm"><tspan fill="#2a9d8f">WS</tspan><tspan fill="#ffffff">-Services</tspan></text>
+</svg>

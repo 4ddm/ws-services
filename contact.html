@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | WS-Services Plumbing &amp; Heating</title>
+  <meta name="description" content="Get a free, no-obligation quote from WS-Services, covering Berkshire, Surrey, Hampshire, Oxfordshire and Buckinghamshire. Call, email or fill in the contact form.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><span class="ws">WS</span>-Services</a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a href="tel:+447444254393" class="header-phone">07444 254393</a>
+        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section" style="padding-bottom: 0;">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Get In Touch</span>
+          <h2>Let's get it sorted</h2>
+          <p>Fill in the form below or give me a call — I aim to get back to you within one working day.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+
+          <div class="contact-info">
+            <div class="card">
+              <h3>Call Me</h3>
+              <p><a href="tel:+447444254393">07444 254393</a></p>
+            </div>
+            <div class="card">
+              <h3>Email Me</h3>
+              <p><a href="mailto:willspies777@gmail.com">willspies777@gmail.com</a></p>
+            </div>
+            <div class="card">
+              <h3>Where I Cover</h3>
+              <p>Berkshire, Surrey, Hampshire, Oxfordshire and Buckinghamshire</p>
+            </div>
+            <div class="card">
+              <h3>Opening Hours</h3>
+              <p>Mon&ndash;Fri: 8:00am&ndash;6:00pm<br>Sat: 9:00am&ndash;1:00pm<br>Emergency call-outs available</p>
+            </div>
+
+            <div class="map-placeholder">Map placeholder</div>
+          </div>
+
+          <div class="contact-form">
+            <div class="form-success">Thanks — I've got your message and will be in touch shortly.</div>
+
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact">
+              <p style="display:none;">
+                <label>Don't fill this out if you're human: <input name="bot-field"></label>
+              </p>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name *</label>
+                  <input type="text" id="name" name="name" required>
+                  <span class="form-error">Please enter your name.</span>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number *</label>
+                  <input type="tel" id="phone" name="phone" required>
+                  <span class="form-error">Please enter a phone number.</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+                <span class="form-error">Please enter a valid email address.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="service">Service Required</label>
+                <select id="service" name="service">
+                  <option value="">Select a service</option>
+                  <option value="plumbing">Plumbing</option>
+                  <option value="heating">Heating</option>
+                  <option value="air-conditioning">Air Conditioning (Coming Soon)</option>
+                  <option value="other">Other / Not Sure</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required></textarea>
+                <span class="form-error">Please tell us a little about the job.</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>WS-Services</h4>
+          <p>Friendly, reliable plumbing and heating — no fuss, just good work, across Berkshire, Surrey, Hampshire, Oxfordshire and Buckinghamshire.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+447444254393">07444 254393</a></li>
+            <li><a href="mailto:willspies777@gmail.com">willspies777@gmail.com</a></li>
+            <li>Berkshire, Surrey, Hampshire, Oxfordshire &amp; Buckinghamshire</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 WS-Services. All rights reserved.</span>
+        <span>Fully insured &amp; 7 years' experience</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
