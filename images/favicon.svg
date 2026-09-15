@@ -2,9 +2,9 @@
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&amp;display=swap');
-      .mark { font-family: 'Poppins', Arial, sans-serif; font-weight: 700; fill: #2a9d8f; }
+      .mark { font-family: 'Poppins', Arial, sans-serif; font-weight: 700; fill: #ff6b00; }
     </style>
   </defs>
-  <rect width="128" height="128" rx="28" fill="#10263f"/>
+  <rect width="128" height="128" rx="28" fill="#092e55"/>
   <text x="64" y="86" text-anchor="middle" font-size="62" class="mark">WS</text>
 </svg>

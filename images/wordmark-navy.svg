@@ -5,5 +5,5 @@
       .wm { font-family: 'Poppins', Arial, sans-serif; font-weight: 600; font-size: 42px; }
     </style>
   </defs>
-  <text x="0" y="44" class="wm"><tspan fill="#2a9d8f">WS</tspan><tspan fill="#10263f">-Services</tspan></text>
+  <text x="0" y="44" class="wm"><tspan fill="#ff6b00">WS</tspan><tspan fill="#092e55">-Services</tspan></text>
 </svg>

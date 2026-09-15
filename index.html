@@ -20,6 +20,7 @@
       <nav class="main-nav">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -39,119 +40,145 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero">
+      <div class="hero-bg">
+        <img src="images/plumber-hero.jpg" alt="William at work" loading="eager">
+      </div>
+      <div class="hero-overlay"></div>
       <div class="container">
         <div class="hero-content">
-          <h1>Need a plumber who actually turns up?</h1>
+          <h1>Fast, Reliable Solutions from WS-Services</h1>
           <p class="lead">
             I'm William — a fully insured plumbing &amp; heating engineer covering Berkshire, Surrey, Hampshire, Oxfordshire and Buckinghamshire.
-            No jargon, no hidden costs, just the job done properly.
           </p>
           <div class="hero-actions">
-            <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
+            <a href="#get-a-quote" class="btn btn-primary">Get a Free Quote</a>
             <a href="tel:+447444254393" class="btn btn-outline">Call 07444 254393</a>
           </div>
-          <div class="hero-badges">
-            <div>Fully Insured</div>
-            <div>7 Years' Experience</div>
-            <div>Free Quotes</div>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img src="images/plumber-hero.jpg" alt="William fitting a plumbing connection under a sink" width="1600" height="1200" loading="eager">
         </div>
       </div>
     </section>
 
-    <!-- ===== USP STRIP ===== -->
-    <section class="usp-strip">
+    <!-- ===== CONTACT FORM + SERVICES ===== -->
+    <section class="section" id="get-a-quote">
       <div class="container">
-        <div class="usp-item">7 Years' Experience</div>
-        <div class="usp-item">Straight-Talking Quotes</div>
-        <div class="usp-item">Fully Insured</div>
-        <div class="usp-item">Always On Time</div>
-      </div>
-    </section>
+        <div class="quote-grid">
 
-    <!-- ===== SERVICES OVERVIEW ===== -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">What I Do</span>
-          <h2>Plumbing, heating &amp; more</h2>
-          <p>From everyday plumbing to full heating system work, I've got it covered.</p>
-        </div>
+          <div class="contact-form contact-form-dark">
+            <h3>Get In Touch</h3>
+            <div class="form-success">Thanks — I've got your message and will be in touch shortly.</div>
 
-        <div class="icon-row-grid">
-          <div class="icon-row">
-            <div class="card-icon">P</div>
-            <div>
-              <h3>Plumbing</h3>
-              <p>Taps, toilets, showers, baths and outside taps, plus full plumbing installations and water softeners.</p>
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact">
+              <p style="display:none;">
+                <label>Don't fill this out if you're human: <input name="bot-field"></label>
+              </p>
+
+              <div class="form-group">
+                <label for="home-name">Full Name *</label>
+                <input type="text" id="home-name" name="name" required>
+                <span class="form-error">Please enter your name.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="home-phone">Phone Number *</label>
+                <input type="tel" id="home-phone" name="phone" required>
+                <span class="form-error">Please enter a phone number.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="home-email">Email Address *</label>
+                <input type="email" id="home-email" name="email" required>
+                <span class="form-error">Please enter a valid email address.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="home-message">Message *</label>
+                <textarea id="home-message" name="message" required></textarea>
+                <span class="form-error">Please tell us a little about the job.</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+
+          <div class="quote-services">
+            <h2>Our Services</h2>
+
+            <div class="quote-service-row">
+              <div class="quote-service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+              </div>
+              <div>
+                <h3>Plumbing</h3>
+                <p>Taps, toilets, showers, baths and outside taps, plus full plumbing installations and water softeners.</p>
+              </div>
+            </div>
+
+            <div class="quote-service-row">
+              <div class="quote-service-icon">
+                <svg viewBox="0 0 24 24" fill="white" width="26" height="26"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+              </div>
+              <div>
+                <h3>Heating Systems</h3>
+                <p>Radiators, pumps, valves, hot water cylinders, system conversions and power flushing.</p>
+              </div>
+            </div>
+
+            <div class="quote-service-row">
+              <div class="quote-service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </div>
+              <div>
+                <h3>Emergency Plumbing</h3>
+                <p>Burst pipe or a job that can't wait? I offer emergency call-outs, including weekends.</p>
+              </div>
+            </div>
+
+            <div class="quote-service-row">
+              <div class="quote-service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" width="26" height="26"><line x1="12" y1="2" x2="12" y2="22"/><line x1="4" y1="7" x2="20" y2="17"/><line x1="20" y1="7" x2="4" y2="17"/><line x1="12" y1="2" x2="9" y2="5"/><line x1="12" y1="2" x2="15" y2="5"/><line x1="12" y1="22" x2="9" y2="19"/><line x1="12" y1="22" x2="15" y2="19"/></svg>
+              </div>
+              <div>
+                <span class="tag-soon">Coming Soon</span>
+                <h3>Air Conditioning</h3>
+                <p>Air con installs are on the way — get in touch and I'll let you know the moment it's ready.</p>
+              </div>
             </div>
           </div>
-          <div class="icon-row">
-            <div class="card-icon">H</div>
-            <div>
-              <h3>Heating Systems</h3>
-              <p>Radiators, pumps, valves, hot water cylinders, system conversions and power flushing.</p>
-            </div>
-          </div>
-          <div class="icon-row">
-            <div class="card-icon">E</div>
-            <div>
-              <h3>Emergency Plumbing</h3>
-              <p>Burst pipe or a job that can't wait? I offer emergency call-outs, including weekends.</p>
-            </div>
-          </div>
-          <div class="icon-row">
-            <div class="card-icon">AC</div>
-            <div>
-              <span class="tag-soon">Coming Soon</span>
-              <h3>Air Conditioning</h3>
-              <p>Air con installs are on the way — get in touch and I'll let you know the moment it's ready.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ===== WHY CHOOSE US ===== -->
-    <section class="section section-grey">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Why Choose Me</span>
-          <h2>A trade professional you can rely on</h2>
-        </div>
-
-        <div class="card-grid">
-          <div class="card">
-            <h3>Experienced &amp; Reliable</h3>
-            <p>7 years' hands-on experience across plumbing and heating systems — I don't cut corners.</p>
-          </div>
-          <div class="card">
-            <h3>Clear, Honest Pricing</h3>
-            <p>You'll know the price before I start. No hidden costs, no sneaky add-ons.</p>
-          </div>
-          <div class="card">
-            <h3>Local &amp; Reliable</h3>
-            <p>Covering Berkshire, Surrey, Hampshire, Oxfordshire and Buckinghamshire — when I say I'll be there, I'll be there.</p>
-          </div>
         </div>
       </div>
     </section>
 
     <!-- ===== TESTIMONIALS ===== -->
-    <section class="section">
+    <section class="section section-blue">
       <div class="container">
         <div class="section-header">
           <span class="eyebrow">Reviews</span>
           <h2>What Customers Say</h2>
+          <p>I'm just getting started on Google — here's a preview of how reviews will look once they start coming in.</p>
         </div>
 
-        <div class="card testimonial-card">
-          <span class="tag-soon">Coming Soon</span>
-          <h3>Building Up Reviews</h3>
-          <p>I'm just getting started on Google — check back soon for reviews from happy customers, or get in touch and be one of the first to leave feedback.</p>
+        <div class="sample-review-tag">
+          <span class="tag-soon">Example layout — not real reviews</span>
+        </div>
+
+        <div class="card-grid">
+          <div class="card sample-review-card">
+            <div class="sample-review-stars">★★★★★</div>
+            <p>"A real customer review will appear here once available."</p>
+            <span class="sample-review-name">Sample Customer</span>
+          </div>
+          <div class="card sample-review-card">
+            <div class="sample-review-stars">★★★★★</div>
+            <p>"A real customer review will appear here once available."</p>
+            <span class="sample-review-name">Sample Customer</span>
+          </div>
+          <div class="card sample-review-card">
+            <div class="sample-review-stars">★★★★★</div>
+            <p>"A real customer review will appear here once available."</p>
+            <span class="sample-review-name">Sample Customer</span>
+          </div>
         </div>
       </div>
     </section>
@@ -161,7 +188,7 @@
       <div class="container">
         <h2>Got a job that needs sorting?</h2>
         <p>Drop me a message and I'll get back to you fast — free, no-obligation quotes.</p>
-        <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
+        <a href="#get-a-quote" class="btn btn-primary">Get a Free Quote</a>
       </div>
     </section>
 
@@ -169,31 +196,21 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4>WS-Services</h4>
-          <p>Friendly, reliable plumbing and heating — no fuss, just good work, across Berkshire, Surrey, Hampshire, Oxfordshire and Buckinghamshire.</p>
-        </div>
-        <div>
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="tel:+447444254393">07444 254393</a></li>
-            <li><a href="mailto:will888@live.com">will888@live.com</a></li>
-            <li>Berkshire, Surrey, Hampshire, Oxfordshire &amp; Buckinghamshire</li>
-          </ul>
+      <div class="footer-row">
+        <a href="index.html" class="logo"><span class="ws">WS</span>-Services</a>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="footer-contact">
+          <a href="tel:+447444254393">07444 254393</a>
+          <a href="mailto:will888@live.com">will888@live.com</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2026 WS-Services. All rights reserved.</span>
-        <span>Fully insured &amp; 7 years' experience</span>
+        &copy; 2026 WS-Services. All rights reserved. | <a href="https://agentrify.co.uk" target="_blank" rel="noopener">AI-powered website by Agentrify</a>
       </div>
     </div>
   </footer>
