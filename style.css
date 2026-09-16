@@ -256,6 +256,8 @@ ul { list-style: none; }
   gap: 16px;
   flex-wrap: wrap;
 }
+.hero-actions .btn { min-width: 220px; text-align: center; }
+.hero-actions .btn-whatsapp { justify-content: center; }
 
 /* ===== CARDS ===== */
 .card-grid {
