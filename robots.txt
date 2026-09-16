@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ws-services.co.uk/sitemap.xml

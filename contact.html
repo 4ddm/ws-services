@@ -10,6 +10,14 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBTE1B13QL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-EBTE1B13QL");
+  </script>
 </head>
 <body>
 
@@ -99,17 +107,6 @@
                 <label for="email">Email Address *</label>
                 <input type="email" id="email" name="email" required>
                 <span class="form-error">Please enter a valid email address.</span>
-              </div>
-
-              <div class="form-group">
-                <label for="service">Service Required</label>
-                <select id="service" name="service">
-                  <option value="">Select a service</option>
-                  <option value="plumbing">Plumbing</option>
-                  <option value="heating">Heating</option>
-                  <option value="air-conditioning">Air Conditioning (Coming Soon)</option>
-                  <option value="other">Other / Not Sure</option>
-                </select>
               </div>
 
               <div class="form-group">
