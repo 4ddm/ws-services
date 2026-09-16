@@ -101,6 +101,15 @@ ul { list-style: none; }
 }
 .btn-outline-navy:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
 
+.btn-whatsapp {
+  background: #25d366;
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn-whatsapp:hover { background: #1ebc59; color: var(--white); }
+
 .section { padding: 72px 0; }
 .section-grey { background: var(--grey-100); }
 
