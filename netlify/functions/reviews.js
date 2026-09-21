@@ -1,5 +1,5 @@
 // Returns WS-Services' Google reviews via the Places API (New).
-// Needs GOOGLE_PLACES_API_KEY and GOOGLE_PLACE_ID env vars; returns no reviews until the Place ID is set.
+// Needs the GOOGLE_PLACES_API_KEY env var; GOOGLE_PLACE_ID optionally overrides the default Place ID (from the g.page review link).
 const API = 'https://places.googleapis.com/v1';
 
 exports.handler = async function () {
@@ -7,7 +7,7 @@ exports.handler = async function () {
   if (!key) return respond(500, { error: 'missing key' }, 60);
 
   try {
-    let placeId = process.env.GOOGLE_PLACE_ID;
+    const placeId = process.env.GOOGLE_PLACE_ID || 'ChIJGdIHjPz5tEgRppKWzV4u9Cc';
 
     if (!placeId) return respond(200, { reviews: [] }, 300);
 
