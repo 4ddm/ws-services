@@ -1,5 +1,5 @@
 // Returns WS-Services' Google reviews via the Places API (New).
-// Key lives in the GOOGLE_PLACES_API_KEY env var; optional GOOGLE_PLACE_ID skips the lookup.
+// Needs GOOGLE_PLACES_API_KEY and GOOGLE_PLACE_ID env vars; returns no reviews until the Place ID is set.
 const API = 'https://places.googleapis.com/v1';
 
 exports.handler = async function () {
@@ -9,29 +9,7 @@ exports.handler = async function () {
   try {
     let placeId = process.env.GOOGLE_PLACE_ID;
 
-    if (!placeId) {
-      const queries = ['WS-Services', 'WS-Services plumber Berkshire', 'WS-Services plumbing heating 07444 254393'];
-      let found = {};
-      let match;
-      for (const q of queries) {
-        const search = await fetch(API + '/places:searchText', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-Goog-Api-Key': key,
-            'X-Goog-FieldMask': 'places.id,places.displayName'
-          },
-          body: JSON.stringify({ textQuery: q, regionCode: 'GB' })
-        });
-        found = await search.json();
-        match = (found.places || []).find(function (p) {
-          return /ws[\s-]*services/i.test(p.displayName && p.displayName.text);
-        });
-        if (match || found.error) break;
-      }
-      if (!match) return respond(200, { reviews: [], lookup: found.error ? found.error.message : (found.places || []).map(function (p) { return p.displayName && p.displayName.text; }) }, 300);
-      placeId = match.id;
-    }
+    if (!placeId) return respond(200, { reviews: [] }, 300);
 
     const res = await fetch(API + '/places/' + placeId, {
       headers: {
