@@ -44,3 +44,52 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+
+// ===== Google reviews =====
+(function () {
+  var section = document.getElementById('reviews');
+  if (!section) return;
+
+  fetch('/.netlify/functions/reviews')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (data) {
+      if (!data || !data.reviews || !data.reviews.length) return;
+
+      var grid = document.getElementById('reviews-grid');
+      data.reviews.slice(0, 3).forEach(function (r) {
+        var card = document.createElement('div');
+        card.className = 'card sample-review-card review-card';
+
+        var stars = document.createElement('div');
+        stars.className = 'sample-review-stars';
+        stars.textContent = '★★★★★'.slice(0, r.rating) + '☆☆☆☆☆'.slice(0, 5 - r.rating);
+        stars.setAttribute('aria-label', r.rating + ' out of 5 stars');
+
+        var text = document.createElement('p');
+        text.textContent = '"' + r.text + '"';
+
+        var name = document.createElement('span');
+        name.className = 'sample-review-name';
+        name.textContent = r.author || 'Google reviewer';
+        if (r.when) {
+          var when = document.createElement('small');
+          when.textContent = r.when;
+          name.appendChild(when);
+        }
+
+        card.appendChild(stars);
+        card.appendChild(text);
+        card.appendChild(name);
+        grid.appendChild(card);
+      });
+
+      if (data.rating && data.total) {
+        document.getElementById('reviews-summary').textContent =
+          'Rated ' + data.rating.toFixed(1) + ' out of 5 on Google (' + data.total + (data.total === 1 ? ' review)' : ' reviews)');
+      }
+      if (data.url) document.getElementById('reviews-link').href = data.url;
+      section.hidden = false;
+    })
+    .catch(function () {});
+})();

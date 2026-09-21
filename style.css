@@ -639,3 +639,9 @@ ul { list-style: none; }
   .form-row { grid-template-columns: 1fr; }
   .footer-row { justify-content: center; text-align: center; }
 }
+
+/* Live Google reviews */
+.reviews-source { text-align: center; margin-top: 28px; }
+.reviews-source a { color: #fff; font-weight: 600; text-decoration: underline; }
+.review-card .sample-review-name small { display: block; font-weight: 400; opacity: .7; }
+#reviews[hidden] { display: none; }
