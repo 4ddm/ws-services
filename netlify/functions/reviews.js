@@ -23,7 +23,7 @@ exports.handler = async function () {
       const match = (found.places || []).find(function (p) {
         return /ws[\s-]*services/i.test(p.displayName && p.displayName.text);
       });
-      if (!match) return respond(200, { reviews: [] }, 3600);
+      if (!match) return respond(200, { reviews: [], lookup: found.error ? found.error.message : (found.places || []).map(function (p) { return p.displayName && p.displayName.text; }) }, 300);
       placeId = match.id;
     }
 
