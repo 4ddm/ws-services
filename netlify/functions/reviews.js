@@ -10,19 +10,25 @@ exports.handler = async function () {
     let placeId = process.env.GOOGLE_PLACE_ID;
 
     if (!placeId) {
-      const search = await fetch(API + '/places:searchText', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Goog-Api-Key': key,
-          'X-Goog-FieldMask': 'places.id,places.displayName'
-        },
-        body: JSON.stringify({ textQuery: 'WS-Services plumbing heating 07444 254393', regionCode: 'GB' })
-      });
-      const found = await search.json();
-      const match = (found.places || []).find(function (p) {
-        return /ws[\s-]*services/i.test(p.displayName && p.displayName.text);
-      });
+      const queries = ['WS-Services', 'WS-Services plumber Berkshire', 'WS-Services plumbing heating 07444 254393'];
+      let found = {};
+      let match;
+      for (const q of queries) {
+        const search = await fetch(API + '/places:searchText', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Goog-Api-Key': key,
+            'X-Goog-FieldMask': 'places.id,places.displayName'
+          },
+          body: JSON.stringify({ textQuery: q, regionCode: 'GB' })
+        });
+        found = await search.json();
+        match = (found.places || []).find(function (p) {
+          return /ws[\s-]*services/i.test(p.displayName && p.displayName.text);
+        });
+        if (match || found.error) break;
+      }
       if (!match) return respond(200, { reviews: [], lookup: found.error ? found.error.message : (found.places || []).map(function (p) { return p.displayName && p.displayName.text; }) }, 300);
       placeId = match.id;
     }
